@@ -5,10 +5,11 @@ pages:
   image: alpine:latest
   stage: pages
   script:
+  - mdir /tmp/public
   - cp -r * /tmp/public/
   artifacts:
     paths:
     - /tmp/public
   publish: /tmp/public
-  # rules:
-  # - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+  rules:
+  - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
