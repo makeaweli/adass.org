@@ -7,10 +7,11 @@ pages:
   script:
   - mkdir /tmp/public
   - cp -r * /tmp/public/
+  - mv /tmp/public public
   artifacts:
     paths:
-    - /tmp/public
-  publish: /tmp/public
+    - public
+  publish: public
   rules:
   - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
