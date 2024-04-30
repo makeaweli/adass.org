@@ -2,13 +2,13 @@ stages:
 - pages
 
 pages:
+  image: alpine:latest
   stage: pages
   script:
-  - mkdir public
-  - cp -r * public/
+  - cp -r * /tmp/public/
   artifacts:
     paths:
-    - public
-  publish: public
+    - /tmp/public
+  publish: /tmp/public
   # rules:
   # - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
