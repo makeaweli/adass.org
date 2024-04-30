@@ -5,7 +5,7 @@ pages:
   image: alpine:latest
   stage: pages
   script:
-  - mdir /tmp/public
+  - mkdir /tmp/public
   - cp -r * /tmp/public/
   artifacts:
     paths:
